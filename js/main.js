@@ -119,6 +119,29 @@ function calcSquare() {
 /*
 Fifth task
 */
+function isPerfect() {
+    let number_1 = getInput("number_5_1");
+    if ((number_1 < 0) || (number_1 != Math.floor(number_1))) {
+        deleteOutput("container");
+        return insertOutput("container", `You must write only positive numbers without fractions`);
+    }
+    let sum = 0;
+    for(let i = 1; i < number_1; i++) {
+        if(number_1 % i === 0) {
+            sum = sum + i;
+        }
+    }
+    deleteOutput("container");
+    if(number_1 === sum) {
+        insertOutput("container", `It is a perfect number`);
+    }
+    else {
+        document.getElementById("container").insertAdjacentHTML('beforeend', `<p class="outputResult_2">It is not a perfect number</p>`);
+    }
+}
+
+
+
 var numbArray = [];
 function addNumberToArray() {
     let numb = getInput("number_5_1");

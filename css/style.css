@@ -44,3 +44,10 @@ input[type="button"]:hover {
     font-size: 25px;
 }
 
+.outputResult_2 {
+    margin: 0 auto;
+    text-align: center;
+    background-color: orange;
+    font-size: 25px;
+}
+
