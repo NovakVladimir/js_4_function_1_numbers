@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Numbers</title>
+</head>
+<body>
+    <section class="conditions">
+        <p>1. Написать функцию, которая принимает 2 числа и возвращает -1, если первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 – если числа равны.</p>
+        <span>First number</span><input type="number" id="number_1_1">
+        <span>Second number</span><input type="number" id="number_1_2">
+        <input type="button" value="Enter" onclick="compare()">
+
+        <p>2. Написать функцию, которая вычисляет факториал переданного ей числа.</p>
+        <span>Number</span><input type="number" id="number_2_1">
+        <input type="button" value="Enter" onclick="findFactorial()">
+
+        <p>3. Написать функцию, которая принимает три отдельные цифры и превращает их в одно число. Например: цифры 1, 4, 9 превратятся в число 149.</p>
+        <span>First number</span><input type="number" id="number_3_1">
+        <span>Second number</span><input type="number" id="number_3_2">
+        <span>Third number</span><input type="number" id="number_3_3">
+        <input type="button" value="Enter" onclick="concatIntegers()">
+
+        <p>4. Написать функцию, которая принимает длину и ширину прямоугольника и вычисляет его площадь. Если в функцию передали 1 параметр, то она вычисляет площадь квадрата.</p>
+        <span>First number</span><input type="number" id="number_4_1">
+        <span>Second number</span><input type="number" id="number_4_2">
+        <input type="button" value="Enter" onclick="calcSquare()">
+
+        <!-- <p>2. Запросить 2 числа и найти только наибольший общий делитель.</p>
+        <span>First number</span><input type="number" id="number_2_1">
+        <span>Second number</span><input type="number" id="number_2_2">
+        <input type="button" value="Enter" onclick="findBiggestDivisor()">
+
+        <p>3. Запросить у пользователя число и вывести все делители этого числа.</p>
+        <span>Your number is</span><input type="number" id="number_3_1">
+        <input type="button" value="Enter" onclick="findAllDivisor()">
+
+        <p>4. Определить количество цифр в введенном числе.</p>
+        <span>Your number is</span><input type="number" id="number_4_1">
+        <input type="button" value="Enter" onclick="countDigit()">
+
+
+        <p>5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем. (Статистику починає рахувати з 4 елементів - примітка автора))</p>
+        <span>Write 10 numbers</span><input type="number" id="number_5_1">
+        <input type="button" value="Enter" onclick="showStatistic()">
+
+        <p>7. Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).</p>
+        <span>Write number</span><input type="number" id="number_7_1">
+        <span>Shift number</span><input type="number" id="number_7_2">
+        <input type="button" value="Enter" onclick="findShiftNumb()">
+
+        <p> 9. Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.</p>
+        <span>From</span><input type="number" id="number_9_1">
+        <span>To</span><input type="number" id="number_9_2">
+        <input type="button" value="Enter" onclick="showMuptiple()"> -->
+
+    </section>
+
+    <section class="output">
+        <div id = "container">
+
+        </div>
+        <div id = "container_2">
+
+        </div>
+    </section>
+    <script src="js/main.js">
+
+    </script>
+    
+</body>
+</html>
