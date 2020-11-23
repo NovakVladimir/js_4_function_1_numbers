@@ -119,11 +119,23 @@ function calcSquare() {
 /*
 Fifth task
 */
-function isPerfect() {
-    let number_1 = getInput("number_5_1");
+function outputPerfect(numb, summ) {
+    if((numb === summ) && (numb !== 0)) {
+        insertOutput("container", `It is a perfect number`);
+        let result = numb;
+        return result;
+    }
+    else {
+        document.getElementById("container").insertAdjacentHTML('beforeend', `<p class="outputResult_2">It is not a perfect number</p>`);
+        return;
+    }
+}
+
+function isPerfect(number_1) {
     if ((number_1 < 0) || (number_1 != Math.floor(number_1))) {
         deleteOutput("container");
-        return insertOutput("container", `You must write only positive numbers without fractions`);
+        insertOutput("container", `You must write only positive numbers without fractions`);
+        return;
     }
     let sum = 0;
     for(let i = 1; i < number_1; i++) {
@@ -132,82 +144,41 @@ function isPerfect() {
         }
     }
     deleteOutput("container");
-    if(number_1 === sum) {
-        insertOutput("container", `It is a perfect number`);
-    }
-    else {
-        document.getElementById("container").insertAdjacentHTML('beforeend', `<p class="outputResult_2">It is not a perfect number</p>`);
-    }
+    return outputPerfect(number_1, sum);
 }
 
-
-
-var numbArray = [];
-function addNumberToArray() {
-    let numb = getInput("number_5_1");
-    if (numb !== Math.floor(numb)) {
-        alert("You must enter only number without fractions");
-        return;
-    }
-    numbArray.push(numb);
-}
-
-function countStatistic() {
-    let min = numbArray.filter(numbA => numbA < 0);
-    let zero = numbArray.filter(numbA => numbA === 0);
-    let plus = numbArray.filter(numbA => numbA > 0);
-    let odd = numbArray.filter(numbA => numbA % 2 !== 0);
-    let even = numbArray.filter(numbA => numbA % 2 === 0);
-    return statisticArray = [min.length, zero.length, plus.length, odd.length, even.length];
-}
-
-function showStatistic() {
-    deleteOutput("container");
-    addNumberToArray();
-    for(let i = 0; i < numbArray.length; i++) {
-        insertOutput("container", `${numbArray[i]}`);
-    }
-    if(numbArray.length < 3) {
-        deleteOutput("container_2");
-        insertOutput("container_2", `You must enter ${3 - numbArray.length} more numbers`);
-    }
-    else {
-        deleteOutput("container_2");
-        countStatistic();
-        insertOutput("container_2", `negative: ${statisticArray[0]};    zero: ${statisticArray[1]};    positive: ${statisticArray[2]};    odd: ${statisticArray[3]};    even: ${statisticArray[4]}`);
-    }
-}
-
-/*
-Seventh task
-*/
-function findShiftNumb() {
-    let numb = getInput("number_7_1");
-    if (numb !== Math.floor(numb)) {
-        alert("You must enter only number without fractions");
-        return;
-    }
-    numb = String(numb);
-    let shift = getInput("number_7_2");
-    shift = shift % numb.length;
-    let numbFirstPart = numb.slice(shift);
-    let numbSecondPart = numb.slice(0, shift);
-    let newNumb = numbFirstPart + numbSecondPart;
-    deleteOutput("container");
-    insertOutput("container", `The new number is: ${newNumb}`);
-}
-
-/*
-Nineth task
-*/
-function showMuptiple() {
-    deleteOutput("container");
-    let numb_1 = getInput("number_9_1");
-    let numb_2 = getInput("number_9_2");
-    for(let i = numb_1; i <= numb_2; i++) {
-        for(let j = 1; j <= 10; j++) {
-            insertOutput("container", `${i} * ${j} = ${i * j}`);
+/**
+ * Sixth task
+ */
+function findAllPerfectNumbers(number_1, number_2) {
+    let perfectArray = [];
+    for(let i = number_1; i <= number_2; i++) {
+        let numberForCheck = isPerfect(i);
+        if (numberForCheck !== undefined) {
+            perfectArray.push(numberForCheck);
         }
     }
+    deleteOutput("container");
+    if(perfectArray.length === 0) {
+        document.getElementById("container").insertAdjacentHTML('beforeend', `<p class="outputResult_2">There are no perfect numbers in this range</p>`);
+    }
+    for(oneOfPerfect of perfectArray) {
+        insertOutput('container', oneOfPerfect);
+    }
 }
+
+/**
+ * Seventh task
+ */
+function showTime(hours, minutes, seconds) {
+    let a = String(hours);
+    
+    alert(a);
+    if(hours === undefined) {
+        insertOutput('container', `Please, enter the amount of hours`);
+    }
+}
+ 
+
+
 
